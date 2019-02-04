@@ -1,7 +1,7 @@
 # docker-texlive-pandoc
 
 Basic image for texlive and pandoc 2.4.
-Based on Ubuntu Xenial
+Based on Ubuntu Xenial.
 
 **Texlive packages:**
 
