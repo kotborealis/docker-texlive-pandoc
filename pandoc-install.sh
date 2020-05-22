@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-curl -kL https://github.com/jgm/pandoc/releases/download/2.4/pandoc-2.4-linux.tar.gz \
+echo "installing pandoc 2.9.2.1"
+
+curl -kL https://github.com/jgm/pandoc/releases/download/2.9.2.1/pandoc-2.9.2.1-linux-amd64.tar.gz \
     | tar -xz --strip-components=1 -C /usr/
 
-curl -kL https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.3.0/linux-ghc84-pandoc23.tar.gz \
-    | tar -xz --strip-components=1 -C /usr/bin/
+echo "installing pandoc-crossref"
+
+curl -kL https://github.com/lierdakil/pandoc-crossref/releases/download/v0.4.0.0-alpha6d/pandoc-crossref-Linux-2.9.2.1.tar.xz \
+    | tar -xJ -C /usr/bin/

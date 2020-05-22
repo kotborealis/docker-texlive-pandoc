@@ -12,6 +12,7 @@ RUN apt-get update -y \
     fonts-cmu \
     lmodern \
     curl \
+    xz-utils \
     && rm -rf /var/lib/apt/lists/*
 
 ADD ./pandoc-install.sh /tmp
