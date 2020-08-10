@@ -11,9 +11,13 @@ RUN apt-get update -y \
     latex-xcolor \
     fonts-cmu \
     lmodern \
-    curl \
-    xz-utils \
     && rm -rf /var/lib/apt/lists/*
 
 ADD ./pandoc-install.sh /tmp
-RUN /tmp/pandoc-install.sh
+RUN apt-get update -y \
+    && apt-get install -y -o Acquire::Retries=10 --no-install-recommends \
+       curl xz-utils \
+    && /tmp/pandoc-install.sh \
+    && apt-get remove -y curl xz-utils \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
